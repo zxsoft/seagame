@@ -1,64 +1,25 @@
-# [HTML5 Boilerplate](http://html5boilerplate.com)
+# 捕鱼大亨 Seagame
 
-HTML5 Boilerplate is a professional front-end template for building fast,
-robust, and adaptable web apps or sites.
+这是一个用AngularJs编写的练手的小游戏。
 
-This project is the product of many years of iterative development and combined
-community knowledge. It does not impose a specific development philosophy or
-framework, so you're free to architect your code in the way that you want.
+## 玩法说明
 
-* Source: [https://github.com/h5bp/html5-boilerplate](https://github.com/h5bp/html5-boilerplate)
-* Homepage: [http://html5boilerplate.com](http://html5boilerplate.com)
-* Twitter: [@h5bp](http://twitter.com/h5bp)
+1.在你的船的下部，点击“开始捕鱼”以使你的船进入捕鱼状态，从此，直到船装满鱼为止，你的船会持续以恒定速度捕到一定数量的鱼。
+2.船上有文字说明当前船上的鱼，与船的容量。你可以点击”收获“按钮把鱼收到你的仓库中。
+3.船的右上角有一个"卖"按钮，点击它可以把船以半价卖出。你不能卖掉最后一条船。
+4.鱼价初始为2，会在1～5之间浮动。点击”卖“按钮可以把鱼换成钱。
+5.你可以花钱买更多的更好的船。
+6.你最多有12条船。
+7.当你收集12条最高级船”异次元捕鱼船“时，赢得游戏！看看你用了多长时间？还能更短点吗？
 
+## 使用技术
 
-## Quick start
+* 基本基于HTML5 Boilerplate，删除了一些影响性能的组件
+* 完全基于AngularJs，封装了很多directive。
 
-Choose one of the following options:
+## 联系我
 
-1. Download the latest stable release from
-   [html5boilerplate.com](http://html5boilerplate.com/) or a custom build from
-   [Initializr](http://www.initializr.com).
-2. Clone the git repo — `git clone
-   https://github.com/h5bp/html5-boilerplate.git` - and checkout the [tagged
-   release](https://github.com/h5bp/html5-boilerplate/releases) you'd like to
-   use.
+如果感兴趣，或有任何想法，欢迎和我联系：
 
-
-## Features
-
-* HTML5 ready. Use the new elements with confidence.
-* Cross-browser compatible (Chrome, Firefox, IE8+, Opera, Safari).
-* Designed with progressive enhancement in mind.
-* Includes [Normalize.css](http://necolas.github.com/normalize.css/) for CSS
-  normalizations and common bug fixes.
-* The latest [jQuery](http://jquery.com/) via CDN, with a local fallback.
-* The latest [Modernizr](http://modernizr.com/) build for feature detection.
-* Placeholder CSS Media Queries.
-* Useful CSS helpers.
-* Default print CSS, performance optimized.
-* Protection against any stray `console.log` causing JavaScript errors in
-  older browsers.
-* An optimized Google Analytics snippet.
-* Apache server caching, compression, and other configuration defaults for
-  Grade-A performance.
-* Cross-domain Ajax and Flash.
-* "Delete-key friendly." Easy to strip out parts you don't need.
-* Extensive inline and accompanying documentation.
-
-[HTML5 Boilerplate v4 provides legacy browser
-support](https://github.com/h5bp/html5-boilerplate/tree/v4) (IE 6+, Firefox
-3.6+, Safari 4+), but is no longer actively developed.
-
-## Documentation
-
-Take a look at the [documentation table of contents](doc/TOC.md). This
-documentation is bundled with the project, which makes it readily available for
-offline reading and provides a useful starting point for any documentation you
-want to write about your project.
-
-
-## Contributing
-
-Anyone and everyone is welcome to [contribute](CONTRIBUTING.md). Hundreds of
-developers have helped make the HTML5 Boilerplate what it is today.
+Email: zxsoft@gmail.com
+QQ: 21557523
