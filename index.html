@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html class="no-js" ng-app="seagame">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script type="text/ng-template" id="shop.html">
+            <div class="shop">
+                <div class="name">造船厂</div>
+                    <ul>
+                    <li ng-repeat="ship in Ships">
+                        {{ship.title}} ({{ship.harvestamount}}/{{ship.needtime | timeunit}})<br/>
+                        容量:{{ship.capacity}} <a href="javascript:void(0)" ng-click="Game.buy($index)">建造({{ship.price}})</a>
+                    </li>
+            </ul>
+            </div>
+        </script>
+        <script type="text/ng-template" id="ship.html">
+            <div class="ship">
+                <div class="name">{{data.title}} <a class="sell" href="javascript:void(0)" ng-click="sell()">卖</a></div>
+                <div class="img {{data.imgClass}}">
+                    <div class="desc">
+                        <div class="speed">速度:{{data.harvestamount}}条/{{data.needtime | timeunit}}<br></div>
+
+                        <div class="capacity">容量:<span ng-class="{'canget':data.current>0}">{{data.current}}</span>/{{data.capacity}} <a href="javascript:void(0)" ng-click="get()">收获</a></div>
+                    </div>
+                </div>
+                <div class="task" ng-switch on="data.state">
+                    <div ng-switch-when="running">捕鱼中 剩余 <i class="timeleft">{{data.timeleft}}</i> 秒 </div>
+                    <div ng-switch-when="idle">空闲中 <a href="javascript:void(0)" ng-click="start()">开始打渔</a></div>
+                </div>
+            </div>
+        </script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <h1>捕鱼大亨</h1>
+        <hr/>
+        <div class="gameinfo">
+                <strong>金钱</strong> <i class="money">${{Game.money | number }}</i> 元   <strong>鱼价</strong> <i ng-class="{'fishprice-low':Game.fishPrice<2,'fishprice-high':Game.fishPrice>=2}">{{Game.fishPrice | currency}}</i> 元/条 <strong>鱼</strong> <i class="fish">{{Game.fish}}</i> 条 <a href="javascript:void(0)" ng-click="Game.sellFish()">卖</a>
+            <span class="man">买12条船异次元捕鱼船以赢得游戏！您最少需要多长时间？ <a href="javascript:reset()">复位游戏，从头玩</a></span>
+        </div>
+        <hr/>
+
+        <ship data="ship" ng-repeat="ship in Game.ships track by $index"></ship>
+        <shop></shop>
+        <script src="js/angular.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+    </body>
+</html>
