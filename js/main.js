@@ -174,9 +174,7 @@ angular.module('seagame',[])
                         Game.money+=Math.floor(ship.price/2);
                         Game.ships.splice(i,1);
 
-                        //下面为了奇怪的Bug。卖掉前面的船的话，后面的船的各种功能都会坏掉。
-                        Game.save();
-                        location.reload();
+
                         return;
                     }
 
