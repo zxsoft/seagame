@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" ng-app="seagame">
+<html class="no-js"  xmlns:ng="http://angularjs.org" id="ng-app" ng-app="seagame">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +11,26 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <!--[if lte IE 8]>
+        <script src="js/json2.js"></script>
+        <![endif]-->
+        <!--[if lte IE 8]>
+        <script>
+            document.createElement('ng-include');
+            document.createElement('ng-pluralize');
+            document.createElement('ng-view');
+
+            // Optionally these for CSS
+            document.createElement('ng:include');
+            document.createElement('ng:pluralize');
+            document.createElement('ng:view');
+
+            //mydirectives
+            document.createElement('ship');
+            document.createElement('shop');
+
+        </script>
+        <![endif]-->
         <script type="text/ng-template" id="shop.html">
             <div class="shop">
                 <div class="name">造船厂</div>
